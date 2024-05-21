@@ -20,15 +20,17 @@ public class Employee {
     private double salary;
     private String address;
 
+    @ManyToOne(cascade = CascadeType.ALL) //any operation in class employee will effect in class department
+    private Department department;
 
 
-
-    public Employee(long id, String firstName, String lastName, double salary, String address) {
+    public Employee(long id, String firstName, String lastName, double salary, String address ,Department department) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
         this.address = address;
+        this.department=department;
     }
 
     public Employee (){
@@ -73,5 +75,13 @@ public class Employee {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }
