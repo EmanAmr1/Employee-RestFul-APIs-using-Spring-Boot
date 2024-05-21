@@ -3,6 +3,7 @@ package com.RestFulApi.Employees.controller;
 import com.RestFulApi.Employees.model.Employee;
 import com.RestFulApi.Employees.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,10 @@ public class EmployeeController {
     @GetMapping("/getEmployee/{id}")
     public Employee getEmployee(@PathVariable Long id){
         return employeeService.getEmployee(id);
+    }
 
+    @GetMapping("/deleteEmployee/{id}")
+    public void deleteEmployee(@PathVariable Long id){
+         employeeService.deleteEmployee(id);
     }
 }
