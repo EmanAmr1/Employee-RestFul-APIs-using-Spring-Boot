@@ -35,11 +35,13 @@ public class EmployeeService {
 
 
 
-
-
     public void deleteEmployee(long id){
       employeeRepository.deleteById(id);
     }
+
+    public void addEmployee(Employee newEmp){
+        employeeRepository.save(newEmp);
+     }
 
 
 
