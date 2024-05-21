@@ -14,6 +14,15 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
 
 
+    public List<Employee> getDeptEmps (long deptId){
+       return employeeRepository.findByDepartmentId(deptId);
+
+    }
+
+
+
+
+
     //RETURN LIST OF EMPLOYEES
     public List<Employee> getAllEmployees(){
         return  employeeRepository.findAll();
@@ -47,6 +56,8 @@ public class EmployeeService {
      public void updateEmployee (Employee Emp){
         employeeRepository.save(Emp);
     }
+
+
 
 
 }

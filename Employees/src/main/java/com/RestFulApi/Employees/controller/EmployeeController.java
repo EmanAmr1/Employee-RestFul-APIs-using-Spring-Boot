@@ -15,6 +15,11 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+@GetMapping("/getDeptEmployees/{deptId}")
+public List<Employee> getDeptEmployees(@PathVariable long deptId){
+    return employeeService.getDeptEmps(deptId);
+}
+
 
     @GetMapping("/getAllEmployees")
     public List<Employee> getAllEmployees(){
