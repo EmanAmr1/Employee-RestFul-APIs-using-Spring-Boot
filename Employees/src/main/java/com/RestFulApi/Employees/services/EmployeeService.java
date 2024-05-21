@@ -11,11 +11,18 @@ import java.util.List;
 public class EmployeeService {
 
     @Autowired
-    public EmployeeRepository employeeRepository;
+    private EmployeeRepository employeeRepository;
 
 
     //RETURN LIST OF EMPLOYEES
     public List<Employee> getAllEmployees(){
         return  employeeRepository.findAll();
     }
+
+
+    public Employee getEmployee(long id) {
+        return employeeRepository.findById(id).get();
+    }
+
+
 }
