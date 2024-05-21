@@ -24,9 +24,16 @@ public class EmployeeService {
         return employeeRepository.findByFirstName(firstName);
     }
 
+
+    public List<Employee> getEmpSearch(String firstName, String lastName){
+        return  employeeRepository.empSearch(firstName,lastName);
+    }
+
     public Employee getEmployee(long id) {
         return employeeRepository.findById(id).get();
     }
+
+
 
 
 

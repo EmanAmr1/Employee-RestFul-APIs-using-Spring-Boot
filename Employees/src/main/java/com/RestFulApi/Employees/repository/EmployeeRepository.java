@@ -2,6 +2,8 @@ package com.RestFulApi.Employees.repository;
 
 import com.RestFulApi.Employees.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,5 +13,12 @@ public interface EmployeeRepository extends JpaRepository<Employee,Long> {
 
     //custom method
     public List<Employee> findByFirstName (String firstName);
+
+
+
+    //custom query
+    @Query("SELECT emp FROM Employee emp WHERE emp.firstName=:firstNameBind AND emp.lastName =:lastNameBind")
+    public List<Employee> empSearch(@Param("firstNameBind") String firstName, @Param("lastNameBind") String lastName);
+
 
 }
