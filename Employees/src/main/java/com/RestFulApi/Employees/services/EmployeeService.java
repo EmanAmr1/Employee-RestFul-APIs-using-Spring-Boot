@@ -20,6 +20,10 @@ public class EmployeeService {
     }
 
 
+    public  List<Employee> getEmployeesByFirstName(String firstName){
+        return employeeRepository.findByFirstName(firstName);
+    }
+
     public Employee getEmployee(long id) {
         return employeeRepository.findById(id).get();
     }
@@ -29,4 +33,7 @@ public class EmployeeService {
     public void deleteEmployee(long id){
       employeeRepository.deleteById(id);
     }
+
+
+
 }
