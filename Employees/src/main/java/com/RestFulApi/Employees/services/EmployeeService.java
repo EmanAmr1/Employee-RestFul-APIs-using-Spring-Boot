@@ -44,5 +44,9 @@ public class EmployeeService {
      }
 
 
+     public void updateEmployee (Employee Emp){
+        employeeRepository.save(Emp);
+    }
+
 
 }

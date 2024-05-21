@@ -49,4 +49,12 @@ public class EmployeeController {
          employeeService.addEmployee(newEmp);
          return "saved successfully";
     }
+
+
+    @PutMapping("/updateEmployee")
+    public String updateEmp(@RequestBody Employee Emp){
+        employeeService.updateEmployee(Emp);
+        return "Updated successfully";
+    }
+
 }
